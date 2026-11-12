@@ -1,5 +1,7 @@
 # JobBoard — Startup Job Board (theme 9)
 
+**Preview:** https://makssmod.github.io/jobboard/
+
 Course «Web Technologies and Web Design», KPI. Author: Коваль Максим, group КН-42.
 
 Pages: **Home** (`index.html`), **Jobs** (`list.html`), **Job details** (`details.html`), **Apply** (`form.html`).
