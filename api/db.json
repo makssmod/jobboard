@@ -1,0 +1,189 @@
+{
+  "t9_jobs": [
+    {
+      "id": 1,
+      "title": "Full-Stack Engineer",
+      "companyId": 1,
+      "city": "San Francisco",
+      "country": "US",
+      "type": "Full-time",
+      "salaryMin": 4000,
+      "salaryMax": 7000,
+      "currency": "USD",
+      "period": "mo",
+      "tags": [
+        "React",
+        "Node.js",
+        "AWS",
+        "PostgreSQL",
+        "TypeScript"
+      ],
+      "date": "2026-10-28",
+      "featured": true,
+      "level": "Middle",
+      "description": "We are looking for a Full-Stack Engineer to help build and scale our AI-powered cloud platform. You will work closely with product, design, and engineering teams to ship features that delight our users.",
+      "requirements": [
+        "3+ years experience with React and Node.js",
+        "Strong understanding of RESTful APIs",
+        "Experience with AWS or similar cloud platforms",
+        "Familiarity with PostgreSQL and Redis",
+        "Excellent English communication skills"
+      ],
+      "offers": [
+        "Competitive salary with equity",
+        "Flexible remote-first culture",
+        "Health insurance and wellness budget",
+        "Learning and development stipend",
+        "Regular team offsites"
+      ],
+      "teamSize": 8,
+      "interviewStages": 3,
+      "startDate": "2026-12-01"
+    },
+    {
+      "id": 2,
+      "title": "Product Designer",
+      "companyId": 2,
+      "city": "London",
+      "country": "UK",
+      "type": "Remote",
+      "salaryMin": 3500,
+      "salaryMax": 5500,
+      "currency": "GBP",
+      "period": "mo",
+      "tags": [
+        "Figma",
+        "UX",
+        "Design Systems"
+      ],
+      "date": "2026-10-26",
+      "featured": true,
+      "level": "Senior"
+    },
+    {
+      "id": 3,
+      "title": "DevOps Engineer",
+      "companyId": 3,
+      "city": "Berlin",
+      "country": "DE",
+      "type": "Hybrid",
+      "salaryMin": 4500,
+      "salaryMax": 6000,
+      "currency": "EUR",
+      "period": "mo",
+      "tags": [
+        "Docker",
+        "K8s",
+        "Terraform"
+      ],
+      "date": "2026-10-25",
+      "featured": true,
+      "level": "Middle"
+    },
+    {
+      "id": 4,
+      "title": "ML Engineer",
+      "companyId": 4,
+      "city": "Kyiv",
+      "country": "UA",
+      "type": "Remote",
+      "salaryMin": 5000,
+      "salaryMax": 8000,
+      "currency": "USD",
+      "period": "mo",
+      "tags": [
+        "Python",
+        "PyTorch"
+      ],
+      "date": "2026-10-22",
+      "featured": false,
+      "level": "Senior"
+    },
+    {
+      "id": 5,
+      "title": "iOS Developer",
+      "companyId": 5,
+      "city": "Tallinn",
+      "country": "EE",
+      "type": "Full-time",
+      "salaryMin": 3500,
+      "salaryMax": 5000,
+      "currency": "EUR",
+      "period": "mo",
+      "tags": [
+        "Swift",
+        "SwiftUI"
+      ],
+      "date": "2026-10-20",
+      "featured": false,
+      "level": "Middle"
+    },
+    {
+      "id": 6,
+      "title": "QA Automation Engineer",
+      "companyId": 3,
+      "city": "Warsaw",
+      "country": "PL",
+      "type": "Part-time",
+      "salaryMin": 2000,
+      "salaryMax": 3000,
+      "currency": "EUR",
+      "period": "mo",
+      "tags": [
+        "Playwright",
+        "CI"
+      ],
+      "date": "2026-10-18",
+      "featured": false,
+      "level": "Junior"
+    }
+  ],
+  "t9_companies": [
+    {
+      "id": 1,
+      "name": "CloudAI Labs",
+      "slug": "cloudai-labs",
+      "website": "https://cloudailabs.io",
+      "founded": 2022,
+      "employees": 85,
+      "about": "CloudAI Labs builds next-gen cloud infrastructure powered by AI."
+    },
+    {
+      "id": 2,
+      "name": "FinTech Pro",
+      "slug": "fintech-pro",
+      "website": "https://fintechpro.example",
+      "founded": 2019,
+      "employees": 140,
+      "about": "FinTech Pro makes everyday banking tools for small businesses."
+    },
+    {
+      "id": 3,
+      "name": "DevOps.io",
+      "slug": "devops-io",
+      "website": "https://devops.example",
+      "founded": 2020,
+      "employees": 60,
+      "about": "DevOps.io automates deployment pipelines for growing engineering teams."
+    },
+    {
+      "id": 4,
+      "name": "DataVerse",
+      "slug": "dataverse",
+      "website": "https://dataverse.example",
+      "founded": 2021,
+      "employees": 45,
+      "about": "DataVerse turns raw product data into ready-to-use ML features."
+    },
+    {
+      "id": 5,
+      "name": "AppForge",
+      "slug": "appforge",
+      "website": "https://appforge.example",
+      "founded": 2018,
+      "employees": 120,
+      "about": "AppForge designs and ships mobile apps for consumer startups."
+    }
+  ],
+  "t9_applications": []
+}

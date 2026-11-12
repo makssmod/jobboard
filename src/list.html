@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<%- include("partials/head", { title: "Browse Jobs", description: "Browse IT jobs at startups. Filter by job type and sort by date or salary." }) %>
+</head>
+<body>
+<%- include("partials/header", { active: "jobs" }) %>
+
+  <main class="page page--list" id="main">
+    <h1 class="page__title" data-i18n="jobs.title">Browse Jobs</h1>
+
+    <aside class="filters" aria-label="Filters">
+      <form class="filters__form" action="list.html" method="get" role="search">
+        <label class="filters__label" for="q" data-i18n="jobs.searchLabel">Search</label>
+        <input class="filters__input" id="q" name="q" type="search"
+          placeholder="Job title or company" autocomplete="off"
+          data-i18n-placeholder="jobs.searchPlaceholder">
+
+        <fieldset class="filters__group">
+          <legend class="filters__legend" data-i18n="jobs.typeLegend">Job type</legend>
+          <input class="chip__input" id="type-all" name="type" type="radio" value="" checked>
+          <label class="chip" for="type-all" data-i18n="jobs.types.all">All Types</label>
+          <input class="chip__input" id="type-remote" name="type" type="radio" value="Remote">
+          <label class="chip" for="type-remote" data-i18n="jobs.types.remote">Remote</label>
+          <input class="chip__input" id="type-full" name="type" type="radio" value="Full-time">
+          <label class="chip" for="type-full" data-i18n="jobs.types.fullTime">Full-time</label>
+          <input class="chip__input" id="type-part" name="type" type="radio" value="Part-time">
+          <label class="chip" for="type-part" data-i18n="jobs.types.partTime">Part-time</label>
+          <input class="chip__input" id="type-hybrid" name="type" type="radio" value="Hybrid">
+          <label class="chip" for="type-hybrid" data-i18n="jobs.types.hybrid">Hybrid</label>
+        </fieldset>
+
+        <label class="filters__label" for="sort" data-i18n="jobs.sortLabel">Sort by</label>
+        <select class="filters__select" id="sort" name="sort">
+          <option value="date-desc" data-i18n="jobs.sort.newest">Newest first</option>
+          <option value="salary-desc" data-i18n="jobs.sort.salaryHigh">Salary: high to low</option>
+          <option value="salary-asc" data-i18n="jobs.sort.salaryLow">Salary: low to high</option>
+        </select>
+
+        <button class="button button--secondary filters__submit" type="submit" data-i18n="common.apply">Apply</button>
+      </form>
+    </aside>
+
+    <section class="results" aria-labelledby="results-title">
+      <h2 class="results__title visually-hidden" id="results-title" data-i18n="jobs.resultsTitle">Job listings</h2>
+      <p class="results__count" role="status">Showing <%= jobs.length %> jobs</p>
+      <ul class="card-list">
+<% jobs.forEach((job) => { %>
+        <li class="card-list__item">
+<%- include("partials/job-card", { job }) %>
+        </li>
+<% }) %>
+      </ul>
+
+      <nav class="pagination" aria-label="Pagination">
+        <ul class="pagination__list">
+          <li class="pagination__item"><a class="pagination__link pagination__link--active" href="list.html?page=1" aria-current="page">1</a></li>
+          <li class="pagination__item"><a class="pagination__link" href="list.html?page=2">2</a></li>
+          <li class="pagination__item"><a class="pagination__link" href="list.html?page=2" data-i18n="jobs.nextPage">Next page</a></li>
+        </ul>
+      </nav>
+    </section>
+  </main>
+
+<%- include("partials/footer") %>
+</body>
+</html>

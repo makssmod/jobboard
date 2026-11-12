@@ -1,0 +1,74 @@
+<% const job = jobs[0]; const co = job.company; %><!DOCTYPE html>
+<html lang="en">
+<head>
+<%- include("partials/head", { title: `Apply for ${job.title}`, description: `Send your application for the ${job.title} position at ${co.name}.` }) %>
+</head>
+<body>
+<%- include("partials/header", { active: "apply" }) %>
+
+  <main class="page page--form" id="main">
+    <h1 class="page__title" id="apply-title">Apply for <%= job.title %></h1>
+    <p class="page__subtitle">at <a class="page__subtitle-link" href="details.html?id=<%= job.id %>"><%= co.name %></a> &middot; <%= job.city %>, <%= job.country %></p>
+
+    <form class="apply" action="applications" method="post" enctype="multipart/form-data" aria-labelledby="apply-title">
+      <input type="hidden" name="jobId" value="<%= job.id %>">
+
+      <fieldset class="apply__group">
+        <legend class="apply__legend" data-i18n="apply.detailsLegend">Your details</legend>
+
+        <div class="field">
+          <label class="field__label" for="name" data-i18n="apply.name">Full Name</label>
+          <input class="field__input" id="name" name="name" type="text"
+            required minlength="2" maxlength="60" autocomplete="name"
+            placeholder="John Doe" data-i18n-placeholder="apply.namePlaceholder">
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="email" data-i18n="apply.email">Email</label>
+          <input class="field__input" id="email" name="email" type="email"
+            required maxlength="100" autocomplete="email" aria-describedby="email-hint"
+            placeholder="john@example.com">
+          <p class="field__hint" id="email-hint" data-i18n="apply.emailHint">We will send the confirmation here.</p>
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="phone" data-i18n="apply.phone">Phone</label>
+          <input class="field__input" id="phone" name="phone" type="tel"
+            autocomplete="tel" pattern="\+?[0-9\s\-\(\)]{7,20}" aria-describedby="phone-hint"
+            placeholder="+380 XX XXX XXXX">
+          <p class="field__hint" id="phone-hint" data-i18n="apply.phoneHint">Optional. Digits, spaces and an optional leading +.</p>
+        </div>
+      </fieldset>
+
+      <fieldset class="apply__group">
+        <legend class="apply__legend" data-i18n="apply.profileLegend">Your profile</legend>
+
+        <div class="field">
+          <label class="field__label" for="portfolio" data-i18n="apply.portfolio">LinkedIn / Portfolio</label>
+          <input class="field__input" id="portfolio" name="portfolio" type="url"
+            autocomplete="url" placeholder="https://">
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="cover" data-i18n="apply.cover">Cover Letter</label>
+          <textarea class="field__input field__input--textarea" id="cover" name="coverLetter"
+            rows="5" maxlength="2000" aria-describedby="cover-hint"
+            placeholder="Tell us why you are a great fit…" data-i18n-placeholder="apply.coverPlaceholder"></textarea>
+          <p class="field__hint" id="cover-hint" data-i18n="apply.coverHint">Up to 2000 characters.</p>
+        </div>
+
+        <div class="field field--file">
+          <label class="field__label" for="resume" data-i18n="apply.resume">Resume (PDF)</label>
+          <input class="field__input field__input--file" id="resume" name="resume" type="file"
+            required accept=".pdf,application/pdf" aria-describedby="resume-hint">
+          <p class="field__hint" id="resume-hint" data-i18n="apply.resumeHint">PDF, max 5 MB.</p>
+        </div>
+      </fieldset>
+
+      <button class="button button--primary apply__submit" type="submit" data-i18n="apply.submit">Submit Application</button>
+    </form>
+  </main>
+
+<%- include("partials/footer") %>
+</body>
+</html>

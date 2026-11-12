@@ -1,0 +1,134 @@
+<% const job = jobs[0]; const co = job.company; %><!DOCTYPE html>
+<html lang="en">
+<head>
+<%- include("partials/head", { title: `${job.title} at ${co.name}`, description: `${job.title} at ${co.name}, ${job.city}. ${job.type}, ${salary(job)} per month.` }) %>
+<%
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    title: job.title,
+    description: job.description,
+    datePosted: job.date,
+    validThrough: "2026-12-31",
+    employmentType: "FULL_TIME",
+    hiringOrganization: { "@type": "Organization", name: co.name, sameAs: co.website },
+    jobLocation: {
+      "@type": "Place",
+      address: { "@type": "PostalAddress", addressLocality: job.city, addressCountry: job.country }
+    },
+    baseSalary: {
+      "@type": "MonetaryAmount",
+      currency: job.currency,
+      value: { "@type": "QuantitativeValue", minValue: job.salaryMin, maxValue: job.salaryMax, unitText: "MONTH" }
+    },
+    skills: job.tags.join(", ")
+  };
+%>
+  <script type="application/ld+json"><%- JSON.stringify(jsonLd, null, 2) %></script>
+</head>
+<body>
+<%- include("partials/header", { active: "jobs" }) %>
+
+  <main class="page page--details" id="main">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ol class="breadcrumbs__list">
+        <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="list.html" data-i18n="nav.jobs">Jobs</a></li>
+        <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="details.html?id=<%= job.id %>" aria-current="page"><%= job.title %></a></li>
+      </ol>
+    </nav>
+
+    <article class="job" aria-labelledby="job-title">
+      <header class="job__header">
+        <a class="job__logo" href="<%= co.website %>">
+          <picture>
+            <source type="image/webp"
+              srcset="assets/img/logo-<%= co.slug %>-64.webp 1x, assets/img/logo-<%= co.slug %>-128.webp 2x, assets/img/logo-<%= co.slug %>-192.webp 3x">
+            <img class="job__logo-img" src="assets/img/logo-<%= co.slug %>-64.jpg"
+              srcset="assets/img/logo-<%= co.slug %>-64.jpg 1x, assets/img/logo-<%= co.slug %>-128.jpg 2x, assets/img/logo-<%= co.slug %>-192.jpg 3x"
+              width="64" height="64" alt="<%= co.name %> website" loading="lazy">
+          </picture>
+        </a>
+        <p class="job__company"><a class="job__company-link" href="#company"><%= co.name %></a></p>
+        <h1 class="job__title" id="job-title"><%= job.title %></h1>
+
+        <dl class="job__meta">
+          <div class="job__meta-item">
+            <dt class="job__meta-label" data-i18n="details.location">Location</dt>
+            <dd class="job__meta-value"><%= job.city %>, <%= job.country %></dd>
+          </div>
+          <div class="job__meta-item">
+            <dt class="job__meta-label" data-i18n="details.type">Employment</dt>
+            <dd class="job__meta-value job__meta-value--accent"><%= job.type %></dd>
+          </div>
+          <div class="job__meta-item">
+            <dt class="job__meta-label" data-i18n="details.salary">Salary</dt>
+            <dd class="job__meta-value"><data value="<%= job.salaryMin %>"><%= salary(job) %></data>/mo</dd>
+          </div>
+          <div class="job__meta-item">
+            <dt class="job__meta-label" data-i18n="details.posted">Posted</dt>
+            <dd class="job__meta-value"><time datetime="<%= job.date %>"><%= date(job.date) %></time></dd>
+          </div>
+        </dl>
+
+        <ul class="job__tags" aria-label="Tech stack">
+<% job.tags.forEach((tag) => { %>
+          <li class="tag"><%= tag %></li>
+<% }) %>
+        </ul>
+      </header>
+
+      <section class="job__section" aria-labelledby="about-role">
+        <h2 class="job__section-title" id="about-role" data-i18n="details.aboutRole">About the Role</h2>
+        <p class="job__text"><%= job.description %></p>
+      </section>
+
+      <section class="job__section" aria-labelledby="requirements">
+        <h2 class="job__section-title" id="requirements" data-i18n="details.requirements">Requirements</h2>
+        <ul class="job__list">
+<% job.requirements.forEach((item) => { %>
+          <li class="job__list-item"><%= item %></li>
+<% }) %>
+        </ul>
+      </section>
+
+      <section class="job__section" aria-labelledby="offer">
+        <h2 class="job__section-title" id="offer" data-i18n="details.offer">What We Offer</h2>
+        <ul class="job__list">
+<% job.offers.forEach((item) => { %>
+          <li class="job__list-item"><%= item %></li>
+<% }) %>
+        </ul>
+      </section>
+
+      <section class="job__section" aria-labelledby="glance">
+        <h2 class="job__section-title" id="glance" data-i18n="details.glance">Role at a Glance</h2>
+        <table class="job__table">
+          <caption class="job__table-caption">Key facts about the <%= job.title %> position</caption>
+          <tbody>
+            <tr><th scope="row" data-i18n="details.level">Level</th><td><%= job.level %></td></tr>
+            <tr><th scope="row" data-i18n="details.teamSize">Team size</th><td><%= job.teamSize %> engineers</td></tr>
+            <tr><th scope="row" data-i18n="details.interview">Interview stages</th><td><%= job.interviewStages %></td></tr>
+            <tr><th scope="row" data-i18n="details.start">Start date</th><td><time datetime="<%= job.startDate %>"><%= date(job.startDate) %></time></td></tr>
+          </tbody>
+        </table>
+      </section>
+    </article>
+
+    <aside class="job-aside" aria-label="Apply and company info">
+      <section class="job-aside__card" aria-labelledby="cta-title">
+        <h2 class="job-aside__title" id="cta-title" data-i18n="details.ctaTitle">Interested in this role?</h2>
+        <p class="job-aside__text" data-i18n="details.ctaText">Apply now and join an innovative team building the future of cloud AI.</p>
+        <a class="button button--primary job-aside__button" href="form.html?job=<%= job.id %>" data-i18n="details.applyNow">Apply Now</a>
+      </section>
+
+      <section class="job-aside__card" id="company" aria-labelledby="company-title">
+        <h2 class="job-aside__title" id="company-title">About <%= co.name %></h2>
+        <p class="job-aside__text"><%= co.about %> Founded in <%= co.founded %>, <%= co.employees %> employees.</p>
+        <p class="job-aside__text"><a class="job-aside__link" href="<%= co.website %>"><%= co.website.replace("https://", "") %></a></p>
+      </section>
+    </aside>
+  </main>
+
+<%- include("partials/footer") %>
+</body>
+</html>

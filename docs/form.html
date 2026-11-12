@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Apply for Full-Stack Engineer | JobBoard</title>
+  <meta name="description" content="Send your application for the Full-Stack Engineer position at CloudAI Labs.">
+  <meta name="theme-color" content="#2563EB">
+
+  <script type="module" crossorigin src="./assets/main-vv5WTjjJ.js"></script>
+</head>
+<body>
+
+  <a class="skip-link" href="#main" data-i18n="common.skipToContent">Skip to content</a>
+  <header class="header">
+    <a class="header__logo" href="index.html">JobBoard</a>
+    <button class="header__burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav" data-i18n-aria-label="nav.openMenu">
+      <span aria-hidden="true">&#9776;</span>
+    </button>
+    <nav class="nav" id="main-nav" aria-label="Main">
+      <ul class="nav__list">
+
+        <li class="nav__item"><a class="nav__link" href="index.html" data-i18n="nav.home">Home</a></li>
+
+        <li class="nav__item"><a class="nav__link" href="list.html" data-i18n="nav.jobs">Jobs</a></li>
+
+        <li class="nav__item"><a class="nav__link nav__link--active" href="form.html" aria-current="page" data-i18n="nav.apply">Apply</a></li>
+
+      </ul>
+    </nav>
+  </header>
+
+
+  <main class="page page--form" id="main">
+    <h1 class="page__title" id="apply-title">Apply for Full-Stack Engineer</h1>
+    <p class="page__subtitle">at <a class="page__subtitle-link" href="details.html?id=1">CloudAI Labs</a> &middot; San Francisco, US</p>
+
+    <form class="apply" action="applications" method="post" enctype="multipart/form-data" aria-labelledby="apply-title">
+      <input type="hidden" name="jobId" value="1">
+
+      <fieldset class="apply__group">
+        <legend class="apply__legend" data-i18n="apply.detailsLegend">Your details</legend>
+
+        <div class="field">
+          <label class="field__label" for="name" data-i18n="apply.name">Full Name</label>
+          <input class="field__input" id="name" name="name" type="text"
+            required minlength="2" maxlength="60" autocomplete="name"
+            placeholder="John Doe" data-i18n-placeholder="apply.namePlaceholder">
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="email" data-i18n="apply.email">Email</label>
+          <input class="field__input" id="email" name="email" type="email"
+            required maxlength="100" autocomplete="email" aria-describedby="email-hint"
+            placeholder="john@example.com">
+          <p class="field__hint" id="email-hint" data-i18n="apply.emailHint">We will send the confirmation here.</p>
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="phone" data-i18n="apply.phone">Phone</label>
+          <input class="field__input" id="phone" name="phone" type="tel"
+            autocomplete="tel" pattern="\+?[0-9\s\-\(\)]{7,20}" aria-describedby="phone-hint"
+            placeholder="+380 XX XXX XXXX">
+          <p class="field__hint" id="phone-hint" data-i18n="apply.phoneHint">Optional. Digits, spaces and an optional leading +.</p>
+        </div>
+      </fieldset>
+
+      <fieldset class="apply__group">
+        <legend class="apply__legend" data-i18n="apply.profileLegend">Your profile</legend>
+
+        <div class="field">
+          <label class="field__label" for="portfolio" data-i18n="apply.portfolio">LinkedIn / Portfolio</label>
+          <input class="field__input" id="portfolio" name="portfolio" type="url"
+            autocomplete="url" placeholder="https://">
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="cover" data-i18n="apply.cover">Cover Letter</label>
+          <textarea class="field__input field__input--textarea" id="cover" name="coverLetter"
+            rows="5" maxlength="2000" aria-describedby="cover-hint"
+            placeholder="Tell us why you are a great fit…" data-i18n-placeholder="apply.coverPlaceholder"></textarea>
+          <p class="field__hint" id="cover-hint" data-i18n="apply.coverHint">Up to 2000 characters.</p>
+        </div>
+
+        <div class="field field--file">
+          <label class="field__label" for="resume" data-i18n="apply.resume">Resume (PDF)</label>
+          <input class="field__input field__input--file" id="resume" name="resume" type="file"
+            required accept=".pdf,application/pdf" aria-describedby="resume-hint">
+          <p class="field__hint" id="resume-hint" data-i18n="apply.resumeHint">PDF, max 5 MB.</p>
+        </div>
+      </fieldset>
+
+      <button class="button button--primary apply__submit" type="submit" data-i18n="apply.submit">Submit Application</button>
+    </form>
+  </main>
+
+  <footer class="footer">
+    <p class="footer__copy"><small data-i18n="footer.copyright">&copy; 2026 JobBoard. All rights reserved.</small></p>
+    <nav class="footer__nav" aria-label="Footer">
+      <ul class="footer__list">
+        <li class="footer__item"><a class="footer__link" href="list.html" data-i18n="footer.allJobs">All jobs</a></li>
+        <li class="footer__item"><a class="footer__link" href="mailto:hello@jobboard.example" data-i18n="footer.contact">Contact</a></li>
+      </ul>
+    </nav>
+  </footer>
+
+</body>
+</html>

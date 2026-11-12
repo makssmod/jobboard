@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<%- include("partials/head", { title: "Find Your Dream Startup Job", description: "Curated IT jobs at the most innovative startups. Search roles by title, skill or company." }) %>
+</head>
+<body>
+<%- include("partials/header", { active: "home" }) %>
+
+  <main class="page page--home" id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <picture class="hero__media">
+        <source media="(min-width: 768px)" type="image/webp"
+          srcset="assets/img/hero-wide-1280.webp 1280w, assets/img/hero-wide-1920.webp 1920w"
+          sizes="100vw">
+        <source media="(min-width: 768px)"
+          srcset="assets/img/hero-wide-1280.jpg 1280w, assets/img/hero-wide-1920.jpg 1920w"
+          sizes="100vw">
+        <source type="image/webp"
+          srcset="assets/img/hero-narrow-360.webp 360w, assets/img/hero-narrow-720.webp 720w"
+          sizes="100vw">
+        <img class="hero__img" src="assets/img/hero-narrow-360.jpg"
+          srcset="assets/img/hero-narrow-360.jpg 360w, assets/img/hero-narrow-720.jpg 720w"
+          sizes="100vw" width="360" height="360" alt="" loading="eager" fetchpriority="high">
+      </picture>
+
+      <h1 class="hero__title" id="hero-title" data-i18n="home.title">Find Your Dream Startup Job</h1>
+      <p class="hero__lead" data-i18n="home.lead">Discover exciting opportunities at the most innovative startups. Your next career move starts here.</p>
+
+      <form class="search" action="list.html" method="get" role="search">
+        <label class="search__label" for="hero-q" data-i18n="home.searchLabel">Search jobs</label>
+        <input class="search__input" id="hero-q" name="q" type="search"
+          placeholder="Job title, keyword, or company…" autocomplete="off"
+          data-i18n-placeholder="home.searchPlaceholder">
+        <button class="button button--primary search__button" type="submit" data-i18n="home.searchButton">Search Jobs</button>
+      </form>
+    </section>
+
+    <section class="stats" aria-labelledby="stats-title">
+      <h2 class="stats__title visually-hidden" id="stats-title" data-i18n="home.statsTitle">JobBoard in numbers</h2>
+      <dl class="stats__list">
+        <div class="stats__item">
+          <dt class="stats__label" data-i18n="home.stats.jobs">Active Jobs</dt>
+          <dd class="stats__value">2,500+</dd>
+        </div>
+        <div class="stats__item">
+          <dt class="stats__label" data-i18n="home.stats.startups">Startups</dt>
+          <dd class="stats__value">800+</dd>
+        </div>
+        <div class="stats__item">
+          <dt class="stats__label" data-i18n="home.stats.applications">Applications</dt>
+          <dd class="stats__value">50K+</dd>
+        </div>
+        <div class="stats__item">
+          <dt class="stats__label" data-i18n="home.stats.cities">Cities</dt>
+          <dd class="stats__value">120+</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="featured" aria-labelledby="featured-title">
+      <h2 class="featured__title" id="featured-title" data-i18n="home.featuredTitle">Featured Jobs</h2>
+      <ul class="card-list card-list--grid">
+<% jobs.filter((job) => job.featured).forEach((job) => { %>
+        <li class="card-list__item">
+<%- include("partials/job-card", { job, maxTags: 3 }) %>
+        </li>
+<% }) %>
+      </ul>
+      <p class="featured__more"><a class="featured__link" href="list.html" data-i18n="home.browseAll">Browse all jobs</a></p>
+    </section>
+  </main>
+
+<%- include("partials/footer") %>
+</body>
+</html>

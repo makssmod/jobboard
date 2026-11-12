@@ -1,0 +1,88 @@
+{
+  "jobs": {
+    "title": "Browse Jobs",
+    "searchLabel": "Search",
+    "typeLegend": "Job type",
+    "types": {
+      "all": "All Types",
+      "remote": "Remote",
+      "fullTime": "Full-time",
+      "partTime": "Part-time",
+      "hybrid": "Hybrid"
+    },
+    "sortLabel": "Sort by",
+    "sort": {
+      "newest": "Newest first",
+      "salaryHigh": "Salary: high to low",
+      "salaryLow": "Salary: low to high"
+    },
+    "resultsTitle": "Job listings",
+    "nextPage": "Next page",
+    "searchPlaceholder": "Job title or company"
+  },
+  "common": {
+    "apply": "Apply",
+    "skipToContent": "Skip to content"
+  },
+  "apply": {
+    "detailsLegend": "Your details",
+    "name": "Full Name",
+    "email": "Email",
+    "emailHint": "We will send the confirmation here.",
+    "phone": "Phone",
+    "phoneHint": "Optional. Digits, spaces and an optional leading +.",
+    "profileLegend": "Your profile",
+    "portfolio": "LinkedIn / Portfolio",
+    "cover": "Cover Letter",
+    "coverHint": "Up to 2000 characters.",
+    "resume": "Resume (PDF)",
+    "resumeHint": "PDF, max 5 MB.",
+    "submit": "Submit Application",
+    "namePlaceholder": "John Doe",
+    "coverPlaceholder": "Tell us why you are a great fit…"
+  },
+  "home": {
+    "title": "Find Your Dream Startup Job",
+    "lead": "Discover exciting opportunities at the most innovative startups. Your next career move starts here.",
+    "searchLabel": "Search jobs",
+    "searchButton": "Search Jobs",
+    "statsTitle": "JobBoard in numbers",
+    "stats": {
+      "jobs": "Active Jobs",
+      "startups": "Startups",
+      "applications": "Applications",
+      "cities": "Cities"
+    },
+    "featuredTitle": "Featured Jobs",
+    "browseAll": "Browse all jobs",
+    "searchPlaceholder": "Job title, keyword, or company…"
+  },
+  "nav": {
+    "jobs": "Jobs",
+    "openMenu": "Open menu",
+    "home": "Home",
+    "apply": "Apply"
+  },
+  "details": {
+    "location": "Location",
+    "type": "Employment",
+    "salary": "Salary",
+    "posted": "Posted",
+    "aboutRole": "About the Role",
+    "requirements": "Requirements",
+    "offer": "What We Offer",
+    "glance": "Role at a Glance",
+    "level": "Level",
+    "teamSize": "Team size",
+    "interview": "Interview stages",
+    "start": "Start date",
+    "ctaTitle": "Interested in this role?",
+    "ctaText": "Apply now and join an innovative team building the future of cloud AI.",
+    "applyNow": "Apply Now"
+  },
+  "footer": {
+    "copyright": "© 2026 JobBoard. All rights reserved.",
+    "allJobs": "All jobs",
+    "contact": "Contact"
+  }
+}

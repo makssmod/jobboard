@@ -1,0 +1,7 @@
+{
+  "/topic9/jobs": "/t9_jobs",
+  "/topic9/jobs/:id": "/t9_jobs/:id",
+  "/topic9/companies": "/t9_companies",
+  "/topic9/applications": "/t9_applications",
+  "/topic9/jobs/:id/applications": "/t9_applications?jobId=:id"
+}

@@ -1,0 +1,21 @@
+<%
+  const links = [
+    { id: "home", href: "index.html", label: "Home", key: "nav.home" },
+    { id: "jobs", href: "list.html", label: "Jobs", key: "nav.jobs" },
+    { id: "apply", href: "form.html", label: "Apply", key: "nav.apply" }
+  ];
+%>
+  <a class="skip-link" href="#main" data-i18n="common.skipToContent">Skip to content</a>
+  <header class="header">
+    <a class="header__logo" href="index.html">JobBoard</a>
+    <button class="header__burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav" data-i18n-aria-label="nav.openMenu">
+      <span aria-hidden="true">&#9776;</span>
+    </button>
+    <nav class="nav" id="main-nav" aria-label="Main">
+      <ul class="nav__list">
+<% links.forEach((link) => { %>
+        <li class="nav__item"><a class="nav__link<%= link.id === active ? " nav__link--active" : "" %>" href="<%= link.href %>"<%- link.id === active ? ' aria-current="page"' : "" %> data-i18n="<%= link.key %>"><%= link.label %></a></li>
+<% }) %>
+      </ul>
+    </nav>
+  </header>

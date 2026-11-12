@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Browse Jobs | JobBoard</title>
+  <meta name="description" content="Browse IT jobs at startups. Filter by job type and sort by date or salary.">
+  <meta name="theme-color" content="#2563EB">
+
+  <script type="module" crossorigin src="./assets/main-vv5WTjjJ.js"></script>
+</head>
+<body>
+
+  <a class="skip-link" href="#main" data-i18n="common.skipToContent">Skip to content</a>
+  <header class="header">
+    <a class="header__logo" href="index.html">JobBoard</a>
+    <button class="header__burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav" data-i18n-aria-label="nav.openMenu">
+      <span aria-hidden="true">&#9776;</span>
+    </button>
+    <nav class="nav" id="main-nav" aria-label="Main">
+      <ul class="nav__list">
+
+        <li class="nav__item"><a class="nav__link" href="index.html" data-i18n="nav.home">Home</a></li>
+
+        <li class="nav__item"><a class="nav__link nav__link--active" href="list.html" aria-current="page" data-i18n="nav.jobs">Jobs</a></li>
+
+        <li class="nav__item"><a class="nav__link" href="form.html" data-i18n="nav.apply">Apply</a></li>
+
+      </ul>
+    </nav>
+  </header>
+
+
+  <main class="page page--list" id="main">
+    <h1 class="page__title" data-i18n="jobs.title">Browse Jobs</h1>
+
+    <aside class="filters" aria-label="Filters">
+      <form class="filters__form" action="list.html" method="get" role="search">
+        <label class="filters__label" for="q" data-i18n="jobs.searchLabel">Search</label>
+        <input class="filters__input" id="q" name="q" type="search"
+          placeholder="Job title or company" autocomplete="off"
+          data-i18n-placeholder="jobs.searchPlaceholder">
+
+        <fieldset class="filters__group">
+          <legend class="filters__legend" data-i18n="jobs.typeLegend">Job type</legend>
+          <input class="chip__input" id="type-all" name="type" type="radio" value="" checked>
+          <label class="chip" for="type-all" data-i18n="jobs.types.all">All Types</label>
+          <input class="chip__input" id="type-remote" name="type" type="radio" value="Remote">
+          <label class="chip" for="type-remote" data-i18n="jobs.types.remote">Remote</label>
+          <input class="chip__input" id="type-full" name="type" type="radio" value="Full-time">
+          <label class="chip" for="type-full" data-i18n="jobs.types.fullTime">Full-time</label>
+          <input class="chip__input" id="type-part" name="type" type="radio" value="Part-time">
+          <label class="chip" for="type-part" data-i18n="jobs.types.partTime">Part-time</label>
+          <input class="chip__input" id="type-hybrid" name="type" type="radio" value="Hybrid">
+          <label class="chip" for="type-hybrid" data-i18n="jobs.types.hybrid">Hybrid</label>
+        </fieldset>
+
+        <label class="filters__label" for="sort" data-i18n="jobs.sortLabel">Sort by</label>
+        <select class="filters__select" id="sort" name="sort">
+          <option value="date-desc" data-i18n="jobs.sort.newest">Newest first</option>
+          <option value="salary-desc" data-i18n="jobs.sort.salaryHigh">Salary: high to low</option>
+          <option value="salary-asc" data-i18n="jobs.sort.salaryLow">Salary: low to high</option>
+        </select>
+
+        <button class="button button--secondary filters__submit" type="submit" data-i18n="common.apply">Apply</button>
+      </form>
+    </aside>
+
+    <section class="results" aria-labelledby="results-title">
+      <h2 class="results__title visually-hidden" id="results-title" data-i18n="jobs.resultsTitle">Job listings</h2>
+      <p class="results__count" role="status">Showing 6 jobs</p>
+      <ul class="card-list">
+
+        <li class="card-list__item">
+
+<article class="job-card" aria-labelledby="job-1-title">
+  <p class="job-card__company">CloudAI Labs</p>
+  <h3 class="job-card__title" id="job-1-title">
+    <a class="job-card__link" href="details.html?id=1">Full-Stack Engineer</a>
+  </h3>
+  <p class="job-card__meta">
+    <span class="job-card__location">San Francisco, US</span>
+    <span class="job-card__sep" aria-hidden="true">&middot;</span>
+    <span class="job-card__type">Full-time</span>
+    <span class="job-card__sep" aria-hidden="true">&middot;</span>
+    <data class="job-card__salary" value="4000">$4,000–$7,000</data>
+  </p>
+  <ul class="job-card__tags" aria-label="Skills">
+
+    <li class="tag">React</li>
+
+    <li class="tag">Node.js</li>
+
+    <li class="tag">AWS</li>
+
+    <li class="tag">PostgreSQL</li>
+
+    <li class="tag">TypeScript</li>
+
+  </ul>
+  <p class="job-card__posted">Posted <time datetime="2026-10-28">Oct 28, 2026</time></p>
+</article>
+
+        </li>
+
+        <li class="card-list__item">
+
+<article class="job-card" aria-labelledby="job-2-title">
+  <p class="job-card__company">FinTech Pro</p>
+  <h3 class="job-card__title" id="job-2-title">
+    <a class="job-card__link" href="details.html?id=2">Product Designer</a>
+  </h3>
+  <p class="job-card__meta">
+    <span class="job-card__location">London, UK</span>
+    <span class="job-card__sep" aria-hidden="true">&middot;</span>
+    <span class="job-card__type">Remote</span>
+    <span class="job-card__sep" aria-hidden="true">&middot;</span>
+    <data class="job-card__salary" value="3500">£3,500–£5,500</data>
+  </p>
+  <ul class="job-card__tags" aria-label="Skills">
+
+    <li class="tag">Figma</li>
+
+    <li class="tag">UX</li>
+
+    <li class="tag">Design Systems</li>
+
+  </ul>
+  <p class="job-card__posted">Posted <time datetime="2026-10-26">Oct 26, 2026</time></p>
+</article>
+
+        </li>
+
+        <li class="card-list__item">
+
+<article class="job-card" aria-labelledby="job-3-title">
+  <p class="job-card__company">DevOps.io</p>
+  <h3 class="job-card__title" id="job-3-title">
+    <a class="job-card__link" href="details.html?id=3">DevOps Engineer</a>
+  </h3>
+  <p class="job-card__meta">
+    <span class="job-card__location">Berlin, DE</span>
+    <span class="job-card__sep" aria-hidden="true">&middot;</span>
+    <span class="job-card__type">Hybrid</span>
+    <span class="job-card__sep" aria-hidden="true">&middot;</span>
+    <data class="job-card__salary" value="4500">€4,500–€6,000</data>
+  </p>
+  <ul class="job-card__tags" aria-label="Skills">
+
+    <li class="tag">Docker</li>
+
+    <li class="tag">K8s</li>
+
+    <li class="tag">Terraform</li>
+
+  </ul>
+  <p class="job-card__posted">Posted <time datetime="2026-10-25">Oct 25, 2026</time></p>
+</article>
+
+        </li>
+
+        <li class="card-list__item">
+
+<article class="job-card" aria-labelledby="job-4-title">
+  <p class="job-card__company">DataVerse</p>
+  <h3 class="job-card__title" id="job-4-title">
+    <a class="job-card__link" href="details.html?id=4">ML Engineer</a>
+  </h3>
+  <p class="job-card__meta">
+    <span class="job-card__location">Kyiv, UA</span>
+    <span class="job-card__sep" aria-hidden="true">&middot;</span>
+    <span class="job-card__type">Remote</span>
+    <span class="job-card__sep" aria-hidden="true">&middot;</span>
+    <data class="job-card__salary" value="5000">$5,000–$8,000</data>
+  </p>
+  <ul class="job-card__tags" aria-label="Skills">
+
+    <li class="tag">Python</li>
+
+    <li class="tag">PyTorch</li>
+
+  </ul>
+  <p class="job-card__posted">Posted <time datetime="2026-10-22">Oct 22, 2026</time></p>
+</article>
+
+        </li>
+
+        <li class="card-list__item">
+
+<article class="job-card" aria-labelledby="job-5-title">
+  <p class="job-card__company">AppForge</p>
+  <h3 class="job-card__title" id="job-5-title">
+    <a class="job-card__link" href="details.html?id=5">iOS Developer</a>
+  </h3>
+  <p class="job-card__meta">
+    <span class="job-card__location">Tallinn, EE</span>
+    <span class="job-card__sep" aria-hidden="true">&middot;</span>
+    <span class="job-card__type">Full-time</span>
+    <span class="job-card__sep" aria-hidden="true">&middot;</span>
+    <data class="job-card__salary" value="3500">€3,500–€5,000</data>
+  </p>
+  <ul class="job-card__tags" aria-label="Skills">
+
+    <li class="tag">Swift</li>
+
+    <li class="tag">SwiftUI</li>
+
+  </ul>
+  <p class="job-card__posted">Posted <time datetime="2026-10-20">Oct 20, 2026</time></p>
+</article>
+
+        </li>
+
+        <li class="card-list__item">
+
+<article class="job-card" aria-labelledby="job-6-title">
+  <p class="job-card__company">DevOps.io</p>
+  <h3 class="job-card__title" id="job-6-title">
+    <a class="job-card__link" href="details.html?id=6">QA Automation Engineer</a>
+  </h3>
+  <p class="job-card__meta">
+    <span class="job-card__location">Warsaw, PL</span>
+    <span class="job-card__sep" aria-hidden="true">&middot;</span>
+    <span class="job-card__type">Part-time</span>
+    <span class="job-card__sep" aria-hidden="true">&middot;</span>
+    <data class="job-card__salary" value="2000">€2,000–€3,000</data>
+  </p>
+  <ul class="job-card__tags" aria-label="Skills">
+
+    <li class="tag">Playwright</li>
+
+    <li class="tag">CI</li>
+
+  </ul>
+  <p class="job-card__posted">Posted <time datetime="2026-10-18">Oct 18, 2026</time></p>
+</article>
+
+        </li>
+
+      </ul>
+
+      <nav class="pagination" aria-label="Pagination">
+        <ul class="pagination__list">
+          <li class="pagination__item"><a class="pagination__link pagination__link--active" href="list.html?page=1" aria-current="page">1</a></li>
+          <li class="pagination__item"><a class="pagination__link" href="list.html?page=2">2</a></li>
+          <li class="pagination__item"><a class="pagination__link" href="list.html?page=2" data-i18n="jobs.nextPage">Next page</a></li>
+        </ul>
+      </nav>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="footer__copy"><small data-i18n="footer.copyright">&copy; 2026 JobBoard. All rights reserved.</small></p>
+    <nav class="footer__nav" aria-label="Footer">
+      <ul class="footer__list">
+        <li class="footer__item"><a class="footer__link" href="list.html" data-i18n="footer.allJobs">All jobs</a></li>
+        <li class="footer__item"><a class="footer__link" href="mailto:hello@jobboard.example" data-i18n="footer.contact">Contact</a></li>
+      </ul>
+    </nav>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<%# Job card. Params: job, maxTags (optional). Uses h3: cards always sit under a section h2. %>
+<article class="job-card" aria-labelledby="job-<%= job.id %>-title">
+  <p class="job-card__company"><%= job.company.name %></p>
+  <h3 class="job-card__title" id="job-<%= job.id %>-title">
+    <a class="job-card__link" href="details.html?id=<%= job.id %>"><%= job.title %></a>
+  </h3>
+  <p class="job-card__meta">
+    <span class="job-card__location"><%= job.city %>, <%= job.country %></span>
+    <span class="job-card__sep" aria-hidden="true">&middot;</span>
+    <span class="job-card__type"><%= job.type %></span>
+    <span class="job-card__sep" aria-hidden="true">&middot;</span>
+    <data class="job-card__salary" value="<%= job.salaryMin %>"><%= salary(job) %></data>
+  </p>
+  <ul class="job-card__tags" aria-label="Skills">
+<% job.tags.slice(0, typeof maxTags === "number" ? maxTags : job.tags.length).forEach((tag) => { %>
+    <li class="tag"><%= tag %></li>
+<% }) %>
+  </ul>
+  <p class="job-card__posted">Posted <time datetime="<%= job.date %>"><%= date(job.date) %></time></p>
+</article>
